@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>🧑‍🚀ReadPaper</title>
+		<style>
+			/* 瀑布流容器样式 */ .grid-container { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); grid-gap: 10px; padding: 10px; } /* 瀑布流项样式 */ .grid-item { background-color: #ddd; border: 1px solid #999; border-radius: 5px; padding: 10px; } /* 导航栏样式 */ nav { background-color: #333; color: #fff; font-size: 18px; padding: 10px; } /* 导航栏列表样式 */ nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: left; } /* 导航栏链接样式 */ nav ul li a { color: #fff; text-decoration: none; padding: 5px 10px; border-radius: 5px; margin-right: 10px; } /* 导航栏链接悬停样式 */ nav ul li a:hover { background-color: #fff; color: #333; }
+			/* footer样式 */  
+			footer {
+				background-color: #333;
+				color: #fff;
+				font-size: 14px;
+				padding: 10px;
+				text-align: center;
+			  }
+		</style>
+		
+		<link rel="shortcut icon" href="assets/images/favicon.ico">
+	</head>
+	<body>
+		<nav>
+			<ul>
+				<li>
+					<a href="#all">首页</a>
+				</li>
+				<li>
+					<a href="#llm">LLMs</a>
+				</li>
+				<li>
+					<a href="#cnn">CNN</a>
+				</li>
+			</ul>
+		</nav>
+
+
+		<div class="grid-container">
+
+			<div class="grid-item llm all">
+				<img src="papers/LLMs/QLoRA/qlora.png" height="240" width="190" title="QLORA: Efficient Finetuning of Quantized LLMs">
+				<center><p>QLoRA</p></center>
+				<a href="papers/LLMs/QLoRA/index-qlora.html">
+					<center><img src="https://img.shields.io/badge/Read%20Paper-1A52C2.svg?style=for-the-badge&logo=monkey-tie&logoColor=white" ></center>
+				</a>
+			</div>
+			
+			
+		</div>
+		
+		
+
+		<script>
+			var links = document.querySelectorAll('nav ul li a');
+						var items = document.querySelectorAll('.grid-item');
+					
+						for (var i = 0; i < links.length; i++) {
+							links[i].addEventListener('click', function(e) {
+								e.preventDefault();
+								var target = this.getAttribute('href');
+								for (var j = 0; j < items.length; j++) {
+									if (items[j].classList.contains(target.substr(1))) {
+										items[j].style.display = 'block';
+									} else {
+										items[j].style.display = 'none';
+									}
+								}
+							});
+						}
+		</script>
+		
+		<script>
+		(function(name, factory) {
+			if (typeof window === "object") {
+				window[name] = factory()
+			}
+		})("Ribbons", function() {
+			var _w = window,
+				_b = document.body,
+				_d = document.documentElement;
+			var random = function() {
+					if (arguments.length === 1) {
+						if (Array.isArray(arguments[0])) {
+							var index = Math.round(random(0, arguments[0].length - 1));
+							return arguments[0][index]
+						}
+						return random(0, arguments[0])
+					} else if (arguments.length === 2) {
+						return Math.random() * (arguments[1] - arguments[0]) + arguments[0]
+					}
+					return 0
+				};
+			var screenInfo = function(e) {
+					var width = Math.max(0, _w.innerWidth || _d.clientWidth || _b.clientWidth || 0),
+						height = Math.max(0, _w.innerHeight || _d.clientHeight || _b.clientHeight || 0),
+						scrollx = Math.max(0, _w.pageXOffset || _d.scrollLeft || _b.scrollLeft || 0) - (_d.clientLeft || 0),
+						scrolly = Math.max(0, _w.pageYOffset || _d.scrollTop || _b.scrollTop || 0) - (_d.clientTop || 0);
+					return {
+						width: width,
+						height: height,
+						ratio: width / height,
+						centerx: width / 2,
+						centery: height / 2,
+						scrollx: scrollx,
+						scrolly: scrolly
+					}
+				};
+			var mouseInfo = function(e) {
+					var screen = screenInfo(e),
+						mousex = e ? Math.max(0, e.pageX || e.clientX || 0) : 0,
+						mousey = e ? Math.max(0, e.pageY || e.clientY || 0) : 0;
+					return {
+						mousex: mousex,
+						mousey: mousey,
+						centerx: mousex - screen.width / 2,
+						centery: mousey - screen.height / 2
+					}
+				};
+			var Point = function(x, y) {
+					this.x = 0;
+					this.y = 0;
+					this.set(x, y)
+				};
+			Point.prototype = {
+				constructor: Point,
+				set: function(x, y) {
+					this.x = x || 0;
+					this.y = y || 0
+				},
+				copy: function(point) {
+					this.x = point.x || 0;
+					this.y = point.y || 0;
+					return this
+				},
+				multiply: function(x, y) {
+					this.x *= x || 1;
+					this.y *= y || 1;
+					return this
+				},
+				divide: function(x, y) {
+					this.x /= x || 1;
+					this.y /= y || 1;
+					return this
+				},
+				add: function(x, y) {
+					this.x += x || 0;
+					this.y += y || 0;
+					return this
+				},
+				subtract: function(x, y) {
+					this.x -= x || 0;
+					this.y -= y || 0;
+					return this
+				},
+				clampX: function(min, max) {
+					this.x = Math.max(min, Math.min(this.x, max));
+					return this
+				},
+				clampY: function(min, max) {
+					this.y = Math.max(min, Math.min(this.y, max));
+					return this
+				},
+				flipX: function() {
+					this.x *= -1;
+					return this
+				},
+				flipY: function() {
+					this.y *= -1;
+					return this
+				}
+			};
+			var Factory = function(options) {
+					this._canvas = null;
+					this._context = null;
+					this._sto = null;
+					this._width = 0;
+					this._height = 0;
+					this._scroll = 0;
+					this._ribbons = [];
+					this._options = {
+						colorSaturation: "80%",
+						colorBrightness: "60%",
+						colorAlpha: 0.65,
+						colorCycleSpeed: 6,
+						verticalPosition: "center",
+						horizontalSpeed: 150,
+						ribbonCount: 5,
+						strokeSize: 5,
+						parallaxAmount: -0.5,
+						animateSections: true
+					};
+					this._onDraw = this._onDraw.bind(this);
+					this._onResize = this._onResize.bind(this);
+					this._onScroll = this._onScroll.bind(this);
+					this.setOptions(options);
+					this.init()
+				};
+			Factory.prototype = {
+				constructor: Factory,
+				setOptions: function(options) {
+					if (typeof options === "object") {
+						for (var key in options) {
+							if (options.hasOwnProperty(key)) {
+								this._options[key] = options[key]
+							}
+						}
+					}
+				},
+				init: function() {
+					try {
+						this._canvas = document.createElement("canvas");
+						this._canvas.style["display"] = "block";
+						this._canvas.style["position"] = "fixed";
+						this._canvas.style["margin"] = "0";
+						this._canvas.style["padding"] = "0";
+						this._canvas.style["border"] = "0";
+						this._canvas.style["outline"] = "0";
+						this._canvas.style["left"] = "0";
+						this._canvas.style["top"] = "0";
+						this._canvas.style["width"] = "100%";
+						this._canvas.style["height"] = "100%";
+						this._canvas.style["z-index"] = "-1";
+						this._onResize();
+						this._context = this._canvas.getContext("2d");
+						this._context.clearRect(0, 0, this._width, this._height);
+						this._context.globalAlpha = this._options.colorAlpha;
+						window.addEventListener("resize", this._onResize);
+						window.addEventListener("scroll", this._onScroll);
+						document.body.appendChild(this._canvas)
+					} catch (e) {
+						console.warn("Canvas Context Error: " + e.toString());
+						return
+					}
+					this._onDraw()
+				},
+				addRibbon: function() {
+					var dir = Math.round(random(1, 9)) > 5 ? "right" : "left",
+						stop = 1000,
+						hide = 200,
+						min = 0 - hide,
+						max = this._width + hide,
+						movex = 0,
+						movey = 0,
+						startx = dir === "right" ? min : max,
+						starty = Math.round(random(0, this._height));
+					if (/^(top|min)$/i.test(this._options.verticalPosition)) {
+						starty = 0 + hide
+					} else if (/^(middle|center)$/i.test(this._options.verticalPosition)) {
+						starty = this._height / 2
+					} else if (/^(bottom|max)$/i.test(this._options.verticalPosition)) {
+						starty = this._height - hide
+					}
+					var ribbon = [],
+						point1 = new Point(startx, starty),
+						point2 = new Point(startx, starty),
+						point3 = null,
+						color = Math.round(random(0, 360)),
+						delay = 0;
+					while (true) {
+						if (stop <= 0) break;
+						stop--;
+						movex = Math.round((Math.random() * 1 - 0.2) * this._options.horizontalSpeed);
+						movey = Math.round((Math.random() * 1 - 0.5) * (this._height * 0.25));
+						point3 = new Point();
+						point3.copy(point2);
+						if (dir === "right") {
+							point3.add(movex, movey);
+							if (point2.x >= max) break
+						} else if (dir === "left") {
+							point3.subtract(movex, movey);
+							if (point2.x <= min) break
+						}
+						ribbon.push({
+							point1: new Point(point1.x, point1.y),
+							point2: new Point(point2.x, point2.y),
+							point3: point3,
+							color: color,
+							delay: delay,
+							dir: dir,
+							alpha: 0,
+							phase: 0
+						});
+						point1.copy(point2);
+						point2.copy(point3);
+						delay += 4;
+						color += this._options.colorCycleSpeed
+					}
+					this._ribbons.push(ribbon)
+				},
+				_drawRibbonSection: function(section) {
+					if (section) {
+						if (section.phase >= 1 && section.alpha <= 0) {
+							return true
+						}
+						if (section.delay <= 0) {
+							section.phase += 0.02;
+							section.alpha = Math.sin(section.phase) * 1;
+							section.alpha = section.alpha <= 0 ? 0 : section.alpha;
+							section.alpha = section.alpha >= 1 ? 1 : section.alpha;
+							if (this._options.animateSections) {
+								var mod = Math.sin(1 + section.phase * Math.PI / 2) * 0.1;
+								if (section.dir === "right") {
+									section.point1.add(mod, 0);
+									section.point2.add(mod, 0);
+									section.point3.add(mod, 0)
+								} else {
+									section.point1.subtract(mod, 0);
+									section.point2.subtract(mod, 0);
+									section.point3.subtract(mod, 0)
+								}
+								section.point1.add(0, mod);
+								section.point2.add(0, mod);
+								section.point3.add(0, mod)
+							}
+						} else {
+							section.delay -= 0.5
+						}
+						var s = this._options.colorSaturation,
+							l = this._options.colorBrightness,
+							c = "hsla(" + section.color + ", " + s + ", " + l + ", " + section.alpha + " )";
+						this._context.save();
+						if (this._options.parallaxAmount !== 0) {
+							this._context.translate(0, this._scroll * this._options.parallaxAmount)
+						}
+						this._context.beginPath();
+						this._context.moveTo(section.point1.x, section.point1.y);
+						this._context.lineTo(section.point2.x, section.point2.y);
+						this._context.lineTo(section.point3.x, section.point3.y);
+						this._context.fillStyle = c;
+						this._context.fill();
+						if (this._options.strokeSize > 0) {
+							this._context.lineWidth = this._options.strokeSize;
+							this._context.strokeStyle = c;
+							this._context.lineCap = "round";
+							this._context.stroke()
+						}
+						this._context.restore()
+					}
+					return false
+				},
+				_onDraw: function() {
+					for (var i = 0, t = this._ribbons.length; i < t; ++i) {
+						if (!this._ribbons[i]) {
+							this._ribbons.splice(i, 1)
+						}
+					}
+					this._context.clearRect(0, 0, this._width, this._height);
+					for (var a = 0; a < this._ribbons.length; ++a) {
+						var ribbon = this._ribbons[a],
+							numSections = ribbon.length,
+							numDone = 0;
+						for (var b = 0; b < numSections; ++b) {
+							if (this._drawRibbonSection(ribbon[b])) {
+								numDone++
+							}
+						}
+						if (numDone >= numSections) {
+							this._ribbons[a] = null
+						}
+					}
+					if (this._ribbons.length < this._options.ribbonCount) {
+						this.addRibbon()
+					}
+					requestAnimationFrame(this._onDraw)
+				},
+				_onResize: function(e) {
+					var screen = screenInfo(e);
+					this._width = screen.width;
+					this._height = screen.height;
+					if (this._canvas) {
+						this._canvas.width = this._width;
+						this._canvas.height = this._height;
+						if (this._context) {
+							this._context.globalAlpha = this._options.colorAlpha
+						}
+					}
+				},
+				_onScroll: function(e) {
+					var screen = screenInfo(e);
+					this._scroll = screen.scrolly
+				}
+			};
+			return Factory
+		});
+		new Ribbons({
+			colorSaturation: "60%",
+			colorBrightness: "50%",
+			colorAlpha: 0.5,
+			colorCycleSpeed: 5,
+			verticalPosition: "random",
+			horizontalSpeed: 200,
+			ribbonCount: 3,
+			strokeSize: 0,
+			parallaxAmount: -0.2,
+			animateSections: true
+		});
+	</script>
+
+
+	<script>
+		!
+		function() {
+			function n(n, e, t) {
+				return n.getAttribute(e) || t
+			}
+			function e(n) {
+				return document.getElementsByTagName(n)
+			}
+			function t() {
+				var t = e("script"),
+				o = t.length,
+				i = t[o - 1];
+				return {
+					l: o,
+					z: n(i, "zIndex", -1),
+					o: n(i, "opacity", .5),
+					c: n(i, "color", "0,0,0"),
+					n: n(i, "count", 99)
+				}
+			}
+			function o() {
+				a = m.width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+				c = m.height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
+			}
+			function i() {
+				r.clearRect(0, 0, a, c);
+				var n, e, t, o, m, l;
+				s.forEach(function(i, x) {
+					for (i.x += i.xa, i.y += i.ya, i.xa *= i.x > a || i.x < 0 ? -1 : 1, i.ya *= i.y > c || i.y < 0 ? -1 : 1, r.fillRect(i.x - .5, i.y - .5, 1, 1), e = x + 1; e < u.length; e++) n = u[e],
+					null !== n.x && null !== n.y && (o = i.x - n.x, m = i.y - n.y, l = o * o + m * m, l < n.max && (n === y && l >= n.max / 2 && (i.x -= .03 * o, i.y -= .03 * m), t = (n.max - l) / n.max, r.beginPath(), r.lineWidth = t / 2, r.strokeStyle = "rgba(" + d.c + "," + (t + .2) + ")", r.moveTo(i.x, i.y), r.lineTo(n.x, n.y), r.stroke()))
+				}),
+				x(i)
+			}
+			var a, c, u, m = document.createElement("canvas"),
+			d = t(),
+			l = "c_n" + d.l,
+			r = m.getContext("2d"),
+			x = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame ||
+			function(n) {
+				window.setTimeout(n, 1e3 / 45)
+			},
+			w = Math.random,
+			y = {
+				x: null,
+				y: null,
+				max: 2e4
+			};
+			m.id = l,
+			m.style.cssText = "position:fixed;top:0;left:0;z-index:" + d.z + ";opacity:" + d.o,
+			e("body")[0].appendChild(m),
+			o(),
+			window.onresize = o,
+			window.onmousemove = function(n) {
+				n = n || window.event,
+				y.x = n.clientX,
+				y.y = n.clientY
+			},
+			window.onmouseout = function() {
+				y.x = null,
+				y.y = null
+			};
+			for (var s = [], f = 0; d.n > f; f++) {
+				var h = w() * a,
+				g = w() * c,
+				v = 2 * w() - 1,
+				p = 2 * w() - 1;
+				s.push({
+					x: h,
+					y: g,
+					xa: v,
+					ya: p,
+					max: 6e3
+				})
+			}
+			u = s.concat([y]),
+			setTimeout(function() {
+				i()
+			},
+			100)
+		} ();
+	</script>
+
+
+		
+		<!--footer>
+			<p>这是footer</p>
+		</footer-->
+		
+	</body>
+</html>

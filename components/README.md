@@ -1,0 +1,3 @@
+- https://github.com/binary-husky/gpt_academic
+- https://chatwithpaper.org/
+- https://chatwithpaper.org/
