@@ -10,3 +10,4 @@ Use gpt_academic<sup>[2]</sup> and ChatGPT to kill tongtianta<sup>[1]</sup>, and
 
 1. https://tongtianta.site/
 2. https://github.com/binary-husky/gpt_academic
+3. https://paper.iflytek.com/
