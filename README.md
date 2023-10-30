@@ -13,3 +13,4 @@ Use gpt_academic<sup>[2]</sup> and ChatGPT to kill tongtianta<sup>[1]</sup>, and
 3. https://paper.iflytek.com/
 4. https://chatwithpaper.org/
 5. https://iflycode.xfyun.cn/
+6. https://www.slido.com/
