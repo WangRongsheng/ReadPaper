@@ -15,3 +15,4 @@ Use gpt_academic<sup>[2]</sup> and ChatGPT to kill tongtianta<sup>[1]</sup>, and
 5. https://iflycode.xfyun.cn/
 6. https://www.slido.com/
 7. https://tongyi.aliyun.com/zhiwen#/
+8. https://github.com/bighuang624/AI-research-tools
